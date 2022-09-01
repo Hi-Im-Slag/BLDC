@@ -1,0 +1,154 @@
+@use "../../scss/" as *;
+p {
+  font-weight: normal;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.container {
+  display: block;
+  margin: 5% auto;
+  background-color: rgb(221, 56, 56);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  width: 800px;
+  max-width: 100%;
+  min-height: 500px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  @include mobile {
+    min-height: 100vh;
+    margin: 0 auto;
+  }
+  .form-action {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    @include mobile {
+      flex-direction: column;
+    }
+    .form-left {
+      width: 50%;
+      height: 100%;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      @include mobile {
+        width: 100%;
+      }
+      h1 {
+        font-weight: 800;
+        font-size: 35px;
+        margin: 0;
+      }
+      .action-with {
+        display: flex;
+        margin: 10px 0;
+        .action-icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid #ddd;
+          border-radius: 50%;
+          margin: 0 5px;
+          width: 40px;
+          height: 40px;
+          .facebook {
+            color: blue;
+          }
+          .gmail {
+            color: red;
+          }
+          .github {
+            color: black;
+          }
+        }
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        .input-group {
+          display: flex;
+          flex-direction: column;
+          padding: 0 40px;
+          input {
+            padding: 10px 20px;
+            background-color: rgb(236, 236, 236);
+            border: none;
+            margin-bottom: 10px;
+          }
+        }
+        .submit {
+          background-color: #ff4b2b;
+          text-transform: uppercase;
+          color: white;
+          border: none;
+          font-weight: bold;
+          padding: 10px 40px;
+          border-radius: 20px;
+          cursor: pointer;
+          &:hover,
+          :focus {
+            animation: pulse1 1s infinite;
+
+            box-shadow: 0 0 0 2em transparent;
+          }
+        }
+      }
+    }
+    .form-right {
+      height: 100%;
+      width: 50%;
+      background: linear-gradient(to right, #ff4b2b, #ff416c);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include mobile {
+        width: 100%;
+      }
+      .form-right-content {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        letter-spacing: 1px;
+        padding: 0 5%;
+      }
+      h1 {
+        font-weight: 800;
+        font-size: 40px;
+        margin: 0;
+      }
+      .button-sign-up {
+        background-color: transparent;
+        text-transform: uppercase;
+        color: white;
+        border: 1px solid white;
+        font-weight: bold;
+        padding: 10px 40px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        &:hover,
+        :focus {
+          animation: pulse2 1s infinite;
+          box-shadow: 0 0 0 2em transparent;
+        }
+      }
+    }
+  }
+}
